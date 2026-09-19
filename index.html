@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vikash Natarajan | Computer Science Student Portfolio</title>
+<meta name="description" content="Portfolio of Vikash Natarajan, a Computer Science student showcasing programming skills, AI/ML learning, Microsoft Azure internship experience, projects and certifications.">
+
+<meta property="og:title" content="Vikash Natarajan | Computer Science Student Portfolio">
+<meta property="og:description" content="Computer Science student building skills in programming, AI/ML and cloud technologies. Explore projects, certifications and experience.">
+<meta property="og:type" content="website">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --paper:#FAF8F4;
+    --ink:#1C1E22;
+    --ink-soft:#565B63;
+    --indigo:#2C3A5E;
+    --indigo-soft:#3F5279;
+    --brass:#C08A34;
+    --hairline:#E2DED4;
+    --surface:#FFFFFF;
+    --max:760px;
+    --wide:1080px;
+  }
+
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  @media (prefers-reduced-motion: reduce){
+    html{scroll-behavior:auto;}
+    *{animation-duration:0.001ms !important; transition-duration:0.001ms !important;}
+  }
+
+  body{
+    margin:0;
+    background:var(--paper);
+    color:var(--ink);
+    font-family:'IBM Plex Sans', sans-serif;
+    font-size:16px;
+    line-height:1.6;
+    -webkit-font-smoothing:antialiased;
+  }
+
+  h1,h2,h3{
+    font-family:'Fraunces', serif;
+    font-weight:500;
+    margin:0;
+    letter-spacing:-0.01em;
+  }
+
+  .mono{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+  }
+
+  a{color:inherit;}
+
+  img{max-width:100%; display:block;}
+
+  .wrap{
+    max-width:var(--wide);
+    margin:0 auto;
+    padding:0 28px;
+  }
+  .col{
+    max-width:var(--max);
+  }
+
+  section{
+    padding:96px 0;
+    border-bottom:1px solid var(--hairline);
+  }
+  section:last-of-type{border-bottom:none;}
+
+  .section-head{
+    display:flex;
+    align-items:baseline;
+    gap:16px;
+    margin-bottom:44px;
+    max-width:var(--wide);
+  }
+  .section-num{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.85rem;
+    color:var(--brass);
+    white-space:nowrap;
+  }
+  .section-head h2{
+    font-size:clamp(1.6rem, 3vw, 2.1rem);
+  }
+
+  /* ---------- NAV ---------- */
+  header.nav{
+    position:sticky;
+    top:0;
+    z-index:50;
+    background:rgba(250,248,244,0.92);
+    backdrop-filter:blur(6px);
+    border-bottom:1px solid var(--hairline);
+  }
+  .nav-inner{
+    max-width:var(--wide);
+    margin:0 auto;
+    padding:16px 28px;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
+  }
+  .nav-mark{
+    font-family:'Fraunces', serif;
+    font-size:1.05rem;
+    font-weight:500;
+  }
+  .nav-links{
+    display:flex;
+    gap:28px;
+    list-style:none;
+    margin:0;
+    padding:0;
+  }
+  .nav-links a{
+    text-decoration:none;
+    font-size:0.92rem;
+    color:var(--ink-soft);
+    padding:4px 2px;
+    border-bottom:1px solid transparent;
+    transition:color .15s ease, border-color .15s ease;
+  }
+  .nav-links a:hover, .nav-links a.active{
+    color:var(--ink);
+    border-color:var(--brass);
+  }
+  .nav-toggle{
+    display:none;
+    background:none;
+    border:1px solid var(--hairline);
+    border-radius:4px;
+    width:38px;
+    height:38px;
+    align-items:center;
+    justify-content:center;
+    cursor:pointer;
+  }
+  .nav-toggle span, .nav-toggle span::before, .nav-toggle span::after{
+    content:"";
+    display:block;
+    width:18px;
+    height:2px;
+    background:var(--ink);
+    position:relative;
+    transition:transform .2s ease, opacity .2s ease;
+  }
+  .nav-toggle span::before{position:absolute; top:-6px;}
+  .nav-toggle span::after{position:absolute; top:6px;}
+
+  @media (max-width:760px){
+    .nav-links{
+      position:fixed;
+      top:69px;
+      left:0; right:0;
+      flex-direction:column;
+      background:var(--paper);
+      border-bottom:1px solid var(--hairline);
+      padding:18px 28px 26px;
+      gap:16px;
+      transform:translateY(-8px);
+      opacity:0;
+      pointer-events:none;
+      transition:opacity .18s ease, transform .18s ease;
+    }
+    .nav-links.open{
+      opacity:1;
+      transform:translateY(0);
+      pointer-events:auto;
+    }
+    .nav-toggle{display:flex;}
+  }
+
+  /* ---------- HERO ---------- */
+  .hero{
+    padding:88px 0 96px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:auto 1fr;
+    gap:32px;
+    align-items:start;
+  }
+  .hero-rule{
+    width:2px;
+    background:var(--brass);
+    height:100%;
+    min-height:220px;
+    margin-top:10px;
+  }
+  .hero-status{
+    margin-bottom:18px;
+  }
+  .hero h1{
+    font-size:clamp(2.6rem, 7vw, 4.6rem);
+    line-height:1.02;
+    margin-bottom:22px;
+  }
+  .hero-role{
+    font-size:clamp(1.05rem, 2vw, 1.3rem);
+    color:var(--indigo);
+    font-weight:500;
+    margin-bottom:26px;
+  }
+  .hero-intro{
+    max-width:560px;
+    color:var(--ink-soft);
+    margin-bottom:36px;
+  }
+  .hero-actions{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:36px;
+  }
+  .btn{
+    display:inline-flex;
+    align-items:center;
+    gap:8px;
+    padding:12px 22px;
+    border-radius:3px;
+    font-size:0.94rem;
+    text-decoration:none;
+    cursor:pointer;
+    border:1px solid transparent;
+    transition:background .15s ease, color .15s ease, border-color .15s ease;
+  }
+  .btn-primary{
+    background:var(--indigo);
+    color:var(--paper);
+  }
+  .btn-primary:hover{background:var(--indigo-soft);}
+  .btn-outline{
+    border-color:var(--ink);
+    color:var(--ink);
+  }
+  .btn-outline:hover{
+    background:var(--ink);
+    color:var(--paper);
+  }
+  .hero-links{
+    display:flex;
+    gap:22px;
+    flex-wrap:wrap;
+  }
+  .hero-links a{
+    display:flex;
+    align-items:center;
+    gap:8px;
+    text-decoration:none;
+    font-size:0.9rem;
+    color:var(--ink-soft);
+  }
+  .hero-links a:hover{color:var(--indigo);}
+  .hero-links svg{width:17px; height:17px;}
+
+  @media (max-width:600px){
+    .hero-grid{grid-template-columns:1fr;}
+    .hero-rule{display:none;}
+  }
+
+  /* ---------- ABOUT ---------- */
+  .about-interests{
+    display:flex;
+    flex-wrap:wrap;
+    gap:10px;
+    margin-top:28px;
+  }
+  .pill{
+    font-size:0.85rem;
+    padding:7px 14px;
+    border:1px solid var(--hairline);
+    border-radius:20px;
+    color:var(--ink-soft);
+    background:var(--surface);
+  }
+
+  /* ---------- TIMELINE (education + experience) ---------- */
+  .timeline{
+    position:relative;
+    max-width:var(--wide);
+    padding-left:28px;
+    border-left:2px solid var(--hairline);
+  }
+  .t-item{
+    position:relative;
+    padding-bottom:44px;
+  }
+  .t-item:last-child{padding-bottom:0;}
+  .t-item::before{
+    content:"";
+    position:absolute;
+    left:-33px;
+    top:4px;
+    width:10px;
+    height:10px;
+    border-radius:50%;
+    background:var(--brass);
+    border:2px solid var(--paper);
+    outline:2px solid var(--brass);
+  }
+  .t-date{
+    display:block;
+  }
+  .t-title{
+    font-size:1.15rem;
+    margin:6px 0 4px;
+    font-weight:500;
+  }
+  .t-org{
+    color:var(--ink-soft);
+    font-size:0.95rem;
+    margin-bottom:8px;
+  }
+  .t-desc{
+    color:var(--ink-soft);
+    max-width:560px;
+    font-size:0.95rem;
+  }
+
+  /* ---------- SKILLS ---------- */
+  .skills-grid{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(230px, 1fr));
+    gap:36px 40px;
+  }
+  .skill-group h3{
+    font-family:'IBM Plex Sans', sans-serif;
+    font-weight:600;
+    font-size:0.85rem;
+    color:var(--indigo);
+    margin-bottom:14px;
+  }
+  .skill-tags{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+  }
+  .tag{
+    font-size:0.85rem;
+    padding:6px 12px;
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:3px;
+  }
+
+  /* ---------- PROJECTS ---------- */
+  .projects{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(280px, 1fr));
+    gap:24px;
+  }
+  .project-card{
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    padding:28px;
+    border-radius:4px;
+    transition:transform .15s ease, box-shadow .15s ease;
+  }
+  .project-card:hover{
+    transform:translateY(-3px);
+    box-shadow:0 10px 24px rgba(28,30,34,0.06);
+  }
+  .project-type{
+    display:inline-block;
+    margin-bottom:14px;
+  }
+  .project-card h3{
+    font-size:1.2rem;
+    margin-bottom:10px;
+  }
+  .project-card p{
+    color:var(--ink-soft);
+    font-size:0.94rem;
+    margin:0;
+  }
+  .project-card.placeholder{
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    text-align:center;
+    border-style:dashed;
+    color:var(--ink-soft);
+    font-size:0.94rem;
+  }
+
+  /* ---------- CERTIFICATES ---------- */
+  .cert-list{
+    display:flex;
+    flex-direction:column;
+    gap:20px;
+  }
+  .cert-card{
+    display:grid;
+    grid-template-columns:140px 1fr auto;
+    gap:24px;
+    align-items:center;
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:4px;
+    padding:20px;
+  }
+  .cert-thumb{
+    width:140px;
+    height:98px;
+    overflow:hidden;
+    border:1px solid var(--hairline);
+    border-radius:3px;
+    cursor:pointer;
+    background:#fff;
+  }
+  .cert-thumb img{
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    object-position:top;
+    transition:transform .2s ease;
+  }
+  .cert-thumb:hover img{transform:scale(1.04);}
+  .cert-title{
+    font-size:1.08rem;
+    font-weight:500;
+    margin-bottom:4px;
+  }
+  .cert-org{
+    color:var(--ink-soft);
+    font-size:0.9rem;
+    margin-bottom:8px;
+  }
+  .cert-meta{
+    display:flex;
+    flex-wrap:wrap;
+    gap:14px;
+    margin-bottom:10px;
+  }
+  .cert-skills{
+    display:flex;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+  .cert-actions{
+    justify-self:end;
+  }
+  .btn-sm{
+    padding:9px 16px;
+    font-size:0.85rem;
+  }
+
+  @media (max-width:640px){
+    .cert-card{
+      grid-template-columns:1fr;
+      text-align:left;
+    }
+    .cert-thumb{width:100%; height:150px;}
+    .cert-actions{justify-self:start;}
+  }
+
+  /* ---------- LEARNING JOURNEY ---------- */
+  .journey{
+    display:grid;
+    grid-template-columns:repeat(auto-fit, minmax(240px, 1fr));
+    gap:24px;
+  }
+  .journey-card{
+    border-left:2px solid var(--indigo);
+    padding-left:18px;
+  }
+  .journey-card .mono{display:block; margin-bottom:8px;}
+  .journey-card h3{
+    font-size:1rem;
+    font-weight:500;
+    margin-bottom:10px;
+  }
+
+  /* ---------- RESUME ---------- */
+  .resume-box{
+    display:flex;
+    flex-wrap:wrap;
+    align-items:center;
+    justify-content:space-between;
+    gap:24px;
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:4px;
+    padding:32px;
+  }
+  .resume-actions{
+    display:flex;
+    gap:12px;
+    flex-wrap:wrap;
+  }
+
+  /* ---------- GITHUB / LINKEDIN ---------- */
+  .connect-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:24px;
+  }
+  .connect-card{
+    background:var(--surface);
+    border:1px solid var(--hairline);
+    border-radius:4px;
+    padding:32px;
+  }
+  .connect-card h3{
+    font-size:1.3rem;
+    margin-bottom:12px;
+  }
+  .connect-card p{
+    color:var(--ink-soft);
+    margin-bottom:22px;
+    font-size:0.95rem;
+  }
+  @media (max-width:640px){
+    .connect-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- CONTACT ---------- */
+  .contact-grid{
+    display:grid;
+    grid-template-columns:1fr 1.2fr;
+    gap:56px;
+  }
+  .contact-info dl{
+    margin:0;
+  }
+  .contact-info dt{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.75rem;
+    color:var(--brass);
+    margin-top:22px;
+  }
+  .contact-info dt:first-child{margin-top:0;}
+  .contact-info dd{
+    margin:4px 0 0;
+    font-size:1.02rem;
+  }
+  .contact-info a{text-decoration:none;}
+  .contact-info a:hover{color:var(--indigo);}
+
+  form.contact-form{
+    display:flex;
+    flex-direction:column;
+    gap:16px;
+  }
+  .field label{
+    display:block;
+    font-size:0.82rem;
+    color:var(--ink-soft);
+    margin-bottom:6px;
+  }
+  .field input, .field textarea{
+    width:100%;
+    padding:12px 14px;
+    border:1px solid var(--hairline);
+    border-radius:3px;
+    background:var(--surface);
+    font-family:inherit;
+    font-size:0.95rem;
+    color:var(--ink);
+  }
+  .field input:focus, .field textarea:focus{
+    outline:2px solid var(--indigo);
+    outline-offset:1px;
+  }
+  .field textarea{resize:vertical; min-height:120px;}
+
+  @media (max-width:760px){
+    .contact-grid{grid-template-columns:1fr;}
+  }
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    padding:40px 0 56px;
+  }
+  .footer-inner{
+    display:flex;
+    flex-wrap:wrap;
+    justify-content:space-between;
+    align-items:center;
+    gap:16px;
+  }
+  .footer-links{
+    display:flex;
+    gap:20px;
+    list-style:none;
+    padding:0;
+    margin:0;
+    font-size:0.88rem;
+  }
+  .footer-links a{text-decoration:none; color:var(--ink-soft);}
+  .footer-links a:hover{color:var(--indigo);}
+  .footer-tag{
+    font-family:'IBM Plex Mono', monospace;
+    font-size:0.78rem;
+    color:var(--ink-soft);
+  }
+
+  /* ---------- MODAL ---------- */
+  .modal-overlay{
+    position:fixed;
+    inset:0;
+    background:rgba(20,20,22,0.72);
+    display:none;
+    align-items:center;
+    justify-content:center;
+    padding:24px;
+    z-index:100;
+  }
+  .modal-overlay.open{display:flex;}
+  .modal-box{
+    background:var(--surface);
+    border-radius:6px;
+    max-width:900px;
+    width:100%;
+    max-height:88vh;
+    display:flex;
+    flex-direction:column;
+    overflow:hidden;
+  }
+  .modal-head{
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:16px 20px;
+    border-bottom:1px solid var(--hairline);
+  }
+  .modal-head h3{font-size:1rem;}
+  .modal-close{
+    background:none;
+    border:none;
+    font-size:1.4rem;
+    line-height:1;
+    cursor:pointer;
+    color:var(--ink-soft);
+    padding:4px 8px;
+  }
+  .modal-close:hover{color:var(--ink);}
+  .modal-body{
+    flex:1;
+    overflow:auto;
+    background:#3a3a3a;
+  }
+  .modal-body iframe{
+    width:100%;
+    height:78vh;
+    border:none;
+    background:#fff;
+  }
+
+  /* ---------- REVEAL ---------- */
+  .reveal{
+    opacity:0;
+    transform:translateY(14px);
+    transition:opacity .5s ease, transform .5s ease;
+  }
+  .reveal.in{
+    opacity:1;
+    transform:translateY(0);
+  }
+
+  :focus-visible{
+    outline:2px solid var(--indigo);
+    outline-offset:2px;
+  }
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="nav-inner">
+    <a href="#home" class="nav-mark">Vikash Natarajan</a>
+    <nav>
+      <ul class="nav-links" id="navLinks">
+        <li><a href="#about">About</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#certifications">Certifications</a></li>
+        <li><a href="#resume">Resume</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+    <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
+      <span></span>
+    </button>
+  </div>
+</header>
+
+<main>
+
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="wrap">
+      <div class="hero-grid">
+        <div class="hero-rule" aria-hidden="true"></div>
+        <div>
+          <span class="mono hero-status">B.Sc. Computer Science · Tiruppur, IN</span>
+          <h1>Vikash<br>Natarajan</h1>
+          <p class="hero-role">Aspiring AI/ML &amp; Technology Professional</p>
+          <p class="hero-intro">Passionate Computer Science student with a strong interest in programming, artificial intelligence, machine learning, cloud technologies and creative problem solving. I enjoy learning new technologies, building projects and continuously improving my technical skills.</p>
+          <div class="hero-actions">
+            <a href="#projects" class="btn btn-primary">View my projects</a>
+            <a href="assets/resume/Vikash_Natarajan_Resume.pdf" download class="btn btn-outline">Download resume</a>
+          </div>
+          <div class="hero-links">
+            <a href="https://github.com/vikashnatarajan5" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 .5C5.73.5.75 5.48.75 11.75c0 5.02 3.26 9.27 7.78 10.77.57.1.78-.25.78-.55 0-.27-.01-1.16-.02-2.1-3.17.69-3.84-1.35-3.84-1.35-.52-1.32-1.27-1.67-1.27-1.67-1.04-.71.08-.7.08-.7 1.15.08 1.75 1.18 1.75 1.18 1.02 1.75 2.68 1.24 3.33.95.1-.74.4-1.24.72-1.53-2.53-.29-5.19-1.27-5.19-5.63 0-1.24.44-2.26 1.17-3.06-.12-.29-.51-1.45.11-3.02 0 0 .96-.31 3.15 1.17a10.9 10.9 0 0 1 5.74 0c2.19-1.48 3.15-1.17 3.15-1.17.62 1.57.23 2.73.11 3.02.73.8 1.17 1.82 1.17 3.06 0 4.37-2.67 5.34-5.21 5.62.41.36.77 1.05.77 2.12 0 1.53-.01 2.76-.01 3.14 0 .3.2.66.79.55 4.51-1.51 7.77-5.76 7.77-10.77C23.25 5.48 18.27.5 12 .5z"/></svg>
+              GitHub
+            </a>
+            <a href="https://www.linkedin.com/in/vikash-natarajan-1266b9372" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.56v-5.57c0-1.33-.02-3.04-1.85-3.04-1.86 0-2.15 1.45-2.15 2.94v5.67H9.34V9h3.41v1.56h.05c.48-.9 1.64-1.85 3.37-1.85 3.6 0 4.27 2.37 4.27 5.45v6.29zM5.34 7.43a2.07 2.07 0 1 1 0-4.13 2.07 2.07 0 0 1 0 4.13zM7.12 20.45H3.56V9h3.56v11.45z"/></svg>
+              LinkedIn
+            </a>
+            <a href="mailto:vikashnatarajan5@gmail.com">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M2 4.5A1.5 1.5 0 0 1 3.5 3h17A1.5 1.5 0 0 1 22 4.5v15a1.5 1.5 0 0 1-1.5 1.5h-17A1.5 1.5 0 0 1 2 19.5v-15zm2.2.5 7.8 6.2L19.8 5H4.2zM20 6.9l-7.4 5.9a1 1 0 0 1-1.2 0L4 6.9V19h16V6.9z"/></svg>
+              Email
+            </a>
+            <a href="tel:9092424009">
+              <svg viewBox="0 0 24 24" fill="currentColor"><path d="M6.6 10.8c1.4 2.7 3.7 5 6.4 6.4l2.1-2.1c.3-.3.7-.4 1-.2 1.1.4 2.4.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C11.6 21 3 12.4 3 2c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.4 0 .8-.2 1L6.6 10.8z"/></svg>
+              Phone
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">about</span>
+        <h2>A bit about me</h2>
+      </div>
+      <div class="col reveal">
+        <p>Hi, I'm Vikash Natarajan, a Computer Science student passionate about technology and continuous learning. I have developed foundational skills in programming, data handling, Microsoft Office tools and creative problem solving. My learning journey has also introduced me to Artificial Intelligence, Machine Learning, Python and Microsoft Azure.</p>
+        <div class="about-interests">
+          <span class="pill">Coding</span>
+          <span class="pill">Learning new technologies</span>
+          <span class="pill">Problem solving</span>
+          <span class="pill">Creative work</span>
+          <span class="pill">Project development</span>
+          <span class="pill">Team collaboration</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">education</span>
+        <h2>Education</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="t-item">
+          <span class="mono t-date">2025</span>
+          <h3 class="t-title">Higher Secondary — Computer Science</h3>
+          <p class="t-org">Bharathi International School, Tiruppur</p>
+        </div>
+        <div class="t-item">
+          <span class="mono t-date">2023</span>
+          <h3 class="t-title">SSLC (Class 10)</h3>
+          <p class="t-org">Vedanta Academy</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">skills</span>
+        <h2>Technical skills</h2>
+      </div>
+      <div class="skills-grid reveal">
+        <div class="skill-group">
+          <h3>Programming</h3>
+          <div class="skill-tags">
+            <span class="tag">Python</span>
+            <span class="tag">C</span>
+            <span class="tag">Basic Programming Concepts</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>AI &amp; Machine Learning (foundational)</h3>
+          <div class="skill-tags">
+            <span class="tag">AI Fundamentals</span>
+            <span class="tag">ML Fundamentals</span>
+            <span class="tag">AI with Python</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Cloud &amp; Emerging Technologies</h3>
+          <div class="skill-tags">
+            <span class="tag">Microsoft Azure</span>
+            <span class="tag">Emerging Technologies</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>Productivity</h3>
+          <div class="skill-tags">
+            <span class="tag">MS Word</span>
+            <span class="tag">MS Excel</span>
+            <span class="tag">MS PowerPoint</span>
+          </div>
+        </div>
+        <div class="skill-group">
+          <h3>General &amp; Professional</h3>
+          <div class="skill-tags">
+            <span class="tag">Problem Solving</span>
+            <span class="tag">Creative Thinking</span>
+            <span class="tag">Team Collaboration</span>
+            <span class="tag">Fast Typing</span>
+            <span class="tag">Data Entry</span>
+            <span class="tag">Internet Usage</span>
+            <span class="tag">Email Handling</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">projects</span>
+        <h2>Projects</h2>
+      </div>
+      <div class="projects reveal">
+        <div class="project-card">
+          <span class="mono project-type">Academic / Exhibition</span>
+          <h3>Smart Village Model</h3>
+          <p>Created a sustainable and digital village model for a school exhibition, demonstrating eco-friendly energy concepts and modern rural solutions.</p>
+        </div>
+        <div class="project-card">
+          <span class="mono project-type">Creative / Design</span>
+          <h3>Event Poster Designing</h3>
+          <p>Designed visually appealing posters and presentations for school events, combining creativity with digital design.</p>
+        </div>
+        <div class="project-card placeholder">
+          More projects coming soon — check back as I add work from GitHub.
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">experience</span>
+        <h2>Internship experience</h2>
+      </div>
+      <div class="timeline reveal">
+        <div class="t-item">
+          <span class="mono t-date">20 Jan 2026 – 12 Feb 2026</span>
+          <h3 class="t-title">Microsoft Azure Internship</h3>
+          <p class="t-org">4-week internship on Microsoft Azure under Emerging Technologies · Microsoft Elevate initiative in collaboration with AICTE</p>
+          <p class="t-desc">Completed a four-week internship focused on Microsoft Azure under Emerging Technologies through a Microsoft Elevate initiative in collaboration with AICTE.</p>
+          <button class="btn btn-outline btn-sm" style="margin-top:14px;" onclick="openModal('azure-internship')">View certificate</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">certifications</span>
+        <h2>Certifications</h2>
+      </div>
+      <div class="cert-list reveal">
+
+        <div class="cert-card">
+          <div class="cert-thumb" onclick="openModal('ai-with-python')" role="button" tabindex="0" aria-label="View AI with Python certificate" onkeydown="if(event.key==='Enter')openModal('ai-with-python')">
+            <img src="assets/certs/ai-with-python.png" alt="AI with Python certificate thumbnail">
+          </div>
+          <div>
+            <h3 class="cert-title">AI with Python</h3>
+            <p class="cert-org">Techzon</p>
+            <div class="cert-meta mono">
+              <span>13 Dec 2025 – 13 Jan 2026</span>
+              <span>ID: TWINT2604042</span>
+            </div>
+            <div class="cert-skills">
+              <span class="tag">Python</span>
+              <span class="tag">AI Fundamentals</span>
+              <span class="tag">Programming</span>
+            </div>
+          </div>
+          <div class="cert-actions">
+            <button class="btn btn-outline btn-sm" onclick="openModal('ai-with-python')">View certificate</button>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-thumb" onclick="openModal('azure-internship')" role="button" tabindex="0" aria-label="View Microsoft Azure internship certificate" onkeydown="if(event.key==='Enter')openModal('azure-internship')">
+            <img src="assets/certs/azure-internship.png" alt="Microsoft Azure internship completion certificate thumbnail">
+          </div>
+          <div>
+            <h3 class="cert-title">Microsoft Azure — Internship Completion</h3>
+            <p class="cert-org">Microsoft Elevate initiative in collaboration with AICTE</p>
+            <div class="cert-meta mono">
+              <span>20 Jan 2026 – 12 Feb 2026</span>
+            </div>
+            <div class="cert-skills">
+              <span class="tag">Microsoft Azure</span>
+              <span class="tag">Cloud Computing</span>
+              <span class="tag">Emerging Technologies</span>
+            </div>
+          </div>
+          <div class="cert-actions">
+            <button class="btn btn-outline btn-sm" onclick="openModal('azure-internship')">View certificate</button>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-thumb" onclick="openModal('aiml-course')" role="button" tabindex="0" aria-label="View Artificial Intelligence and Machine Learning course certificate" onkeydown="if(event.key==='Enter')openModal('aiml-course')">
+            <img src="assets/certs/aiml-course.png" alt="Artificial Intelligence and Machine Learning course completion certificate thumbnail">
+          </div>
+          <div>
+            <h3 class="cert-title">Artificial Intelligence &amp; Machine Learning</h3>
+            <p class="cert-org">AICTE / Microsoft Elevate &amp; Philanthropies / Microsoft India</p>
+            <div class="cert-meta mono">
+              <span>20-hour course</span>
+              <span>20 Jan 2026 – 12 Feb 2026</span>
+            </div>
+            <div class="cert-skills">
+              <span class="tag">Artificial Intelligence</span>
+              <span class="tag">Machine Learning</span>
+              <span class="tag">Emerging Technologies</span>
+            </div>
+          </div>
+          <div class="cert-actions">
+            <button class="btn btn-outline btn-sm" onclick="openModal('aiml-course')">View certificate</button>
+          </div>
+        </div>
+
+        <div class="cert-card">
+          <div class="cert-thumb" onclick="openModal('azure-course')" role="button" tabindex="0" aria-label="View Microsoft Azure course certificate" onkeydown="if(event.key==='Enter')openModal('azure-course')">
+            <img src="assets/certs/azure-course.png" alt="Microsoft Azure course completion certificate thumbnail">
+          </div>
+          <div>
+            <h3 class="cert-title">Microsoft Azure — Course Completion</h3>
+            <p class="cert-org">AICTE / Microsoft Elevate &amp; Philanthropies / Microsoft India</p>
+            <div class="cert-meta mono">
+              <span>25-hour course</span>
+              <span>20 Jan 2026 – 12 Feb 2026</span>
+            </div>
+            <div class="cert-skills">
+              <span class="tag">Microsoft Azure</span>
+              <span class="tag">Cloud Computing</span>
+            </div>
+          </div>
+          <div class="cert-actions">
+            <button class="btn btn-outline btn-sm" onclick="openModal('azure-course')">View certificate</button>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- LEARNING JOURNEY -->
+      <div style="margin-top:64px;">
+        <h3 style="font-family:'IBM Plex Sans'; font-size:0.85rem; font-weight:600; color:var(--indigo); margin-bottom:24px;">Skills &amp; areas of learning, by certificate</h3>
+        <div class="journey reveal">
+          <div class="journey-card">
+            <span class="mono">AI with Python</span>
+            <h3>Python · AI Fundamentals · Programming</h3>
+          </div>
+          <div class="journey-card">
+            <span class="mono">Artificial Intelligence &amp; Machine Learning</span>
+            <h3>Artificial Intelligence · Machine Learning · Emerging Technologies</h3>
+          </div>
+          <div class="journey-card">
+            <span class="mono">Microsoft Azure Internship</span>
+            <h3>Microsoft Azure · Cloud Computing Fundamentals · Emerging Technologies</h3>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- RESUME -->
+  <section id="resume">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">resume</span>
+        <h2>My resume</h2>
+      </div>
+      <div class="resume-box reveal">
+        <p style="max-width:420px; margin:0; color:var(--ink-soft);">View or download my latest resume for a detailed overview of my education, skills, projects and experience.</p>
+        <div class="resume-actions">
+          <button class="btn btn-outline" onclick="openModal('resume')">View resume</button>
+          <a href="assets/resume/Vikash_Natarajan_Resume.pdf" download class="btn btn-primary">Download resume</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- GITHUB / LINKEDIN -->
+  <section id="connect">
+    <div class="wrap">
+      <div class="connect-grid reveal">
+        <div class="connect-card">
+          <h3>Explore my code</h3>
+          <p>Explore my GitHub profile to see my programming practice, projects and learning journey.</p>
+          <a href="https://github.com/vikashnatarajan5" target="_blank" rel="noopener" class="btn btn-outline">Visit GitHub</a>
+        </div>
+        <div class="connect-card">
+          <h3>Let's connect</h3>
+          <p>Connect with me on LinkedIn to follow my professional and learning journey.</p>
+          <a href="https://www.linkedin.com/in/vikash-natarajan-1266b9372" target="_blank" rel="noopener" class="btn btn-outline">Connect on LinkedIn</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact">
+    <div class="wrap">
+      <div class="section-head">
+        <span class="section-num mono">contact</span>
+        <h2>Get in touch</h2>
+      </div>
+      <div class="contact-grid reveal">
+        <div class="contact-info">
+          <dl>
+            <dt>Name</dt>
+            <dd>Vikash Natarajan</dd>
+            <dt>Phone</dt>
+            <dd><a href="tel:9092424009">9092424009</a></dd>
+            <dt>Email</dt>
+            <dd><a href="mailto:vikashnatarajan5@gmail.com">vikashnatarajan5@gmail.com</a></dd>
+            <dt>GitHub</dt>
+            <dd><a href="https://github.com/vikashnatarajan5" target="_blank" rel="noopener">github.com/vikashnatarajan5</a></dd>
+            <dt>LinkedIn</dt>
+            <dd><a href="https://www.linkedin.com/in/vikash-natarajan-1266b9372" target="_blank" rel="noopener">linkedin.com/in/vikash-natarajan-1266b9372</a></dd>
+          </dl>
+        </div>
+        <form class="contact-form" id="contactForm">
+          <div class="field">
+            <label for="cName">Name</label>
+            <input type="text" id="cName" name="name" required>
+          </div>
+          <div class="field">
+            <label for="cEmail">Email</label>
+            <input type="email" id="cEmail" name="email" required>
+          </div>
+          <div class="field">
+            <label for="cMessage">Message</label>
+            <textarea id="cMessage" name="message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary" style="align-self:flex-start;">Send message</button>
+        </form>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer>
+  <div class="wrap footer-inner">
+    <span class="footer-tag">© 2026 Vikash Natarajan. All rights reserved. · Learning • Building • Growing</span>
+    <ul class="footer-links">
+      <li><a href="https://github.com/vikashnatarajan5" target="_blank" rel="noopener">GitHub</a></li>
+      <li><a href="https://www.linkedin.com/in/vikash-natarajan-1266b9372" target="_blank" rel="noopener">LinkedIn</a></li>
+      <li><a href="mailto:vikashnatarajan5@gmail.com">Email</a></li>
+    </ul>
+  </div>
+</footer>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalOverlay">
+  <div class="modal-box" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-head">
+      <h3 id="modalTitle">Document</h3>
+      <div style="display:flex; align-items:center; gap:16px;">
+        <a id="modalOpenNew" href="" target="_blank" rel="noopener" style="font-size:0.85rem; color:var(--ink-soft); text-decoration:underline;">Open in new tab</a>
+        <button class="modal-close" onclick="closeModal()" aria-label="Close">&times;</button>
+      </div>
+    </div>
+    <div class="modal-body">
+      <iframe id="modalFrame" src="" title="Document viewer"></iframe>
+    </div>
+  </div>
+</div>
+
+<script>
+  // Mobile nav toggle
+  const navToggle = document.getElementById('navToggle');
+  const navLinks = document.getElementById('navLinks');
+  navToggle.addEventListener('click', () => {
+    const isOpen = navLinks.classList.toggle('open');
+    navToggle.setAttribute('aria-expanded', isOpen);
+  });
+  navLinks.querySelectorAll('a').forEach(a => {
+    a.addEventListener('click', () => {
+      navLinks.classList.remove('open');
+      navToggle.setAttribute('aria-expanded', 'false');
+    });
+  });
+
+  // Active link highlight on scroll
+  const sections = document.querySelectorAll('main section[id]');
+  const linkMap = {};
+  navLinks.querySelectorAll('a').forEach(a => linkMap[a.getAttribute('href').slice(1)] = a);
+  const navObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const link = linkMap[entry.target.id];
+      if (!link) return;
+      if (entry.isIntersecting) {
+        Object.values(linkMap).forEach(l => l.classList.remove('active'));
+        link.classList.add('active');
+      }
+    });
+  }, { rootMargin: '-40% 0px -50% 0px' });
+  sections.forEach(s => navObserver.observe(s));
+
+  // Reveal on scroll
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('in');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Modal / document viewer
+  const docs = {
+    'ai-with-python': { title: 'AI with Python — Certificate', src: 'assets/certs/ai-with-python.pdf' },
+    'azure-internship': { title: 'Microsoft Azure — Internship Completion', src: 'assets/certs/azure-internship.pdf' },
+    'aiml-course': { title: 'Artificial Intelligence & Machine Learning — Certificate', src: 'assets/certs/aiml-course.pdf' },
+    'azure-course': { title: 'Microsoft Azure — Course Completion', src: 'assets/certs/azure-course.pdf' },
+    'resume': { title: 'Vikash Natarajan — Resume', src: 'assets/resume/Vikash_Natarajan_Resume.pdf' }
+  };
+  const overlay = document.getElementById('modalOverlay');
+  const frame = document.getElementById('modalFrame');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalOpenNew = document.getElementById('modalOpenNew');
+  let lastFocused = null;
+
+  function openModal(key) {
+    const doc = docs[key];
+    if (!doc) return;
+    lastFocused = document.activeElement;
+    modalTitle.textContent = doc.title;
+    frame.src = doc.src;
+    modalOpenNew.href = doc.src;
+    overlay.classList.add('open');
+    document.body.style.overflow = 'hidden';
+    overlay.querySelector('.modal-close').focus();
+  }
+  function closeModal() {
+    overlay.classList.remove('open');
+    frame.src = '';
+    document.body.style.overflow = '';
+    if (lastFocused) lastFocused.focus();
+  }
+  overlay.addEventListener('click', (e) => {
+    if (e.target === overlay) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && overlay.classList.contains('open')) closeModal();
+  });
+
+  // Contact form -> mailto
+  document.getElementById('contactForm').addEventListener('submit', function(e){
+    e.preventDefault();
+    const name = document.getElementById('cName').value;
+    const email = document.getElementById('cEmail').value;
+    const message = document.getElementById('cMessage').value;
+    const subject = encodeURIComponent('Portfolio contact from ' + name);
+    const body = encodeURIComponent(message + '\n\n— ' + name + ' (' + email + ')');
+    window.location.href = `mailto:vikashnatarajan5@gmail.com?subject=${subject}&body=${body}`;
+  });
+</script>
+
+</body>
+</html>
